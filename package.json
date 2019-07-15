@@ -1,0 +1,32 @@
+{
+  "name": "PoGoAPI",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joechesney/PoGoAPI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joechesney/PoGoAPI/issues"
+  },
+  "homepage": "https://github.com/joechesney/PoGoAPI#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cheerio": "^1.0.0-rc.3",
+    "cors": "^2.8.5",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.0",
+    "joi": "^14.3.1",
+    "lodash": "^4.17.11",
+    "nodemon": "^1.19.0",
+    "request": "^2.88.0"
+  }
+}

@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "db:migrate": "cd database && npx sequelize db:migrate",
+    "db:migrate:undo": "cd database && npx sequelize db:migrate:undo"
   },
   "repository": {
     "type": "git",
@@ -27,7 +29,10 @@
     "joi": "^14.3.1",
     "lodash": "^4.17.11",
     "nodemon": "^1.19.0",
+    "pg": "^7.11.0",
     "request": "^2.88.0",
-    "request-promise": "^4.2.4"
+    "request-promise": "^4.2.4",
+    "sequelize": "^5.10.1",
+    "sequelize-cli": "^5.5.0"
   }
 }

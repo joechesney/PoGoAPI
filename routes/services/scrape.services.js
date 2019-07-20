@@ -1,6 +1,9 @@
 const rp = require('request-promise');
 const cheerio = require('cheerio');
-const getOnePokemon = async (number) => {
+const { Pokemon } = require('../../database/models');
+
+
+const scrapeOnePokemon = async (number) => {
   // 1. Create options object for the request
   const options = {
     uri: `https://pokemongo.gamepress.gg/pokemon/${number}`,
@@ -24,4 +27,11 @@ const getOnePokemon = async (number) => {
   return { pokemonName };
 }
 
-module.exports = { getOnePokemon }
+const insertOnePokemon = async (pokemonObject) => {
+  await Pokemon.create(pokemonObject)
+}
+
+module.exports = { 
+  scrapeOnePokemon,
+  insertOnePokemon
+}

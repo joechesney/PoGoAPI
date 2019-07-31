@@ -41,6 +41,9 @@ module.exports = {
       buddy_distance: {
         type: Sequelize.INTEGER
       },
+      sprite_url: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

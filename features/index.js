@@ -2,7 +2,6 @@
 const { Router } = require('express');
 const router = Router();
 
-router.use("/test", require('./testRoutes'))
-router.use("/pokemon", require('./pokemonRoutes'))
+router.use("/pogo", require('./main/main.routes'))
 
 module.exports = router;

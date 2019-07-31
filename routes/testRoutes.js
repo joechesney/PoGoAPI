@@ -6,6 +6,6 @@ const testRouter = Router();
 const { testGetOnePokemonController, testPostController } = require('./controllers');
 
 testRouter.get('/get', testGetOnePokemonController);
-testRouter.post('/pokemon', testPostController);
+testRouter.post('/post', testPostController);
 
 module.exports = testRouter;

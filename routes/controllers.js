@@ -1,5 +1,5 @@
 
-const { testGetOnePokemon, testPostOnePokemon } = require('./services/routes.services');
+const { testGetOnePokemon, testPostOnePokemon, insertPokemon } = require('./services/routes.services');
 const { scrapeOnePokemon, insertOnePokemon } = require('./services/scrape.services');
 
 const allPokemonController = async (req, res, next) => {
@@ -12,15 +12,12 @@ const testGetOnePokemonController = async (req, res, next) => {
 
   const pokemonObject = await testGetOnePokemon(1);
   
-  const wasInserted = await insertPokemon(pokemonObject);
-  res.json(wasInserted)
-  // return wasInserted;
+  res.json(pokemonObject)
 }
 const testPostController = async (req, res, next) => {
-
-  const pokemonObject = await testPostOnePokemon(1);
-  const wasInserted = await insertPokemon(pokemonObject);
-  res.next(wasInserted)
+  console.log('req.body : ', req.body);
+  const wasInserted = await testPostOnePokemon(req.body);
+  res.json(wasInserted)
 }
 
 module.exports = {

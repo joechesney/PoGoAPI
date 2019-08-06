@@ -28,7 +28,9 @@ const scrapeOnePokemon = async (number) => {
 }
 
 const insertOnePokemon = async (pokemonObject) => {
-  await Pokemon.create(pokemonObject)
+  console.log('pokemonObject to post : ', pokemonObject);
+  const pokemonInsterted = await Pokemon.create(pokemonObject)
+  return pokemonInsterted;
 }
 
 module.exports = { 

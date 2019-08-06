@@ -3,10 +3,12 @@ const { Router } = require('express');
 
 const pokemonRouter = Router();
 
-const { getAllPokemonController} = require('./main.controllers');
+const { 
+  getAllPokemonController,
+  getOnePokemonController
+} = require('./main.controllers');
 
 pokemonRouter.get('/all', getAllPokemonController);
-// pokemonRouter.get('/pokemon:number', testGetOnePokemonController);
-// pokemonRouter.post('/pokemon', testPostController);
+pokemonRouter.get('/pokemon/:number', getOnePokemonController);
 
 module.exports = pokemonRouter;

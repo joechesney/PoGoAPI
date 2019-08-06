@@ -1,27 +1,26 @@
 
 const { Pokemon, Moves, Types } = require('../../../database/models');
 
+// Get all non-deleted pokemon, sorted by number
 const getAllPokemon = async (number) => {
-  // 1. Create options object for the request
-  const pokemon = await Pokemon.findAll();
-  console.log('pokemon got : ', pokemon);
-  return pokemon;
+  const allPokemon = await Pokemon.findAll({
+    order: [ ['number', 'ASC'] ]
+  });
+  // console.log('pokemon got : ', allPokemon);
+  return allPokemon;
 }
 
 const getOnePokemon = async (number) => {
-  // 1. Create options object for the request
-  const pokemon = await Pokemon.findOne({ where: { number } });
-  console.log('pokemon got : ', pokemon);
+  // 1. Get the pokemon and their associated moves
+  const pokemon = await Pokemon.findOne({
+    where: { number },
+    // include: {}
+  });
+  // console.log('pokemon got : ', pokemon);
   return pokemon;
-}
-
-const postOnePokemon = async (pokemonObject) => {
-  console.log('pokemonObject to post : ', pokemonObject);
-  await Pokemon.create(pokemonObject)
 }
 
 module.exports = {
   getAllPokemon,
-  getOnePokemon,
-  postOnePokemon
+  getOnePokemon
 }
